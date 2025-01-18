@@ -11,17 +11,18 @@ public class ElevatorAppl {
     public static void main(String[] args) throws InterruptedException {
         Elevator elevator = new Elevator("V.I.Lenin");
 
+        long start = System.currentTimeMillis();
         Thread[] threads = new Thread[N_TRUCK];
         for (int i =0; i<threads.length; i++) {
             threads[i] = new Thread(new Truck(N_RACES, CAPACITY, elevator));
             threads[i].start();
         }
 
-        long start = System.currentTimeMillis();
         for(int i=0; i < threads.length; i++) {
             threads[i].join();
         }
-        long timeWork = System.currentTimeMillis() - start;
+        long stop = System.currentTimeMillis();
+        long timeWork = stop - start;
         System.out.println("Elevator " +elevator.getName() + " has " + elevator.getCurrentVolume());
         System.out.println("timeWork -> " + timeWork);
 
