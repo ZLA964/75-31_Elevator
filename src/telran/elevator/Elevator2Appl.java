@@ -11,7 +11,7 @@ public class Elevator2Appl {
 
     public static void main(String[] args) throws InterruptedException {
         Elevator elevator = new Elevator("V.I.Lenin");
-        Elevator elevator1 = new Elevator("Marks");
+        Elevator elevator1 = new Elevator("Karl Marks");
 
         long start = System.currentTimeMillis();
         Thread[] threads = new Thread[N_TRUCK];
